@@ -17,8 +17,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 path1 = os.path.join(BASE_DIR, "fifa_model3.pkl")
 path = os.path.join(BASE_DIR, "fifa_dataset3.pkl")
 path2 = os.path.join(BASE_DIR, "scaler.pkl")
-
-model = joblib.load(model_path)
 model = joblib.load(path1)
 fifa = joblib.load(path)
 scaler = joblib.load(path2)
