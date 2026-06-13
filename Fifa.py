@@ -4,20 +4,29 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 import os
+import gdown
 
 
 # path =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_dataset3.pkl"
 # path1 =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_model3.pkl"
 # path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
 
+# https://drive.google.com/file/d//
 
+MODEL_FILE = "fifa_model3.pkl"
+
+if not os.path.exists(MODEL_FILE):
+    file_id = "1fDbC8Q5-nFZAQ-8KOTI5yVHF7ntTMvL1"
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, MODEL_FILE, quiet=False)
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-path1 = os.path.join(BASE_DIR, "fifa_model3.pkl")
+# path1 = os.path.join(MODEL_FILE, "fifa_model3.pkl")
 path = os.path.join(BASE_DIR, "fifa_dataset3.pkl")
 path2 = os.path.join(BASE_DIR, "scaler.pkl")
-model = joblib.load(path1)
+
+model = joblib.load(MODEL_FILE)
 fifa = joblib.load(path)
 scaler = joblib.load(path2)
 
