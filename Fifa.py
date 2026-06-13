@@ -3,13 +3,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-
-
-path =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_dataset3.pkl"
-path1 =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_model3.pkl"
-path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
-
 import os
+
+
+# path =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_dataset3.pkl"
+# path1 =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_model3.pkl"
+# path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
+
+
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
