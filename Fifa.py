@@ -24,11 +24,11 @@ if not os.path.exists(MODEL_FILE):
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # path1 = os.path.join(MODEL_FILE, "fifa_model3.pkl")
 path = os.path.join(BASE_DIR, "fifa_dataset3.pkl")
-path2 = os.path.join(BASE_DIR, "scaler.pkl")
+# path2 = os.path.join(BASE_DIR, "scaler.pkl")
 
 model = joblib.load(MODEL_FILE)
 fifa = joblib.load(path)
-scaler = joblib.load(path2)
+# scaler = joblib.load(path2)
 
 teams = fifa['home_team'].unique()
 teams1 = fifa['away_team'].unique()
