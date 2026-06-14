@@ -15,21 +15,21 @@ import gdown
 
 MODEL_FILE = "fifa_model3.pkl"
 if not os.path.exists(MODEL_FILE):
-    file_id = "10yTV7Ca-xcRla57RkgL4yBLmLQiD2zE-"
+    file_id = "1wIuUimUoo1nuy_cXfJoBZI5qgNuMYIZy"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, MODEL_FILE, quiet=False)
 
 path = "fifa_dataset3.pkl"
 # https://drive.google.com/file/d/1AkOqoGHewIB2PQprCROd4W04UId_ZAql/view?usp=sharing
 if not os.path.exists(path):
-    file_id = "1fx1PnXZM64DfaoHczeQiK4bnczvv18nU"
+    file_id = "1a3bQAmgBJXNWqS8zD3BMPYrv59LqzunS"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path, quiet=False)
 
 path2 = "over1.5_model.pkl"
 # https://drive.google.com/file/d/14m8VCtSj6YgOgvmBdUynnQm5IJyGoCP-/view?usp=sharing
 if not os.path.exists(path2):
-    file_id = "1chEsNKhEc_lMEg98hpJcKvEDOPdKiSDd"
+    file_id = "1YVjXnyqdncqlVQX7a5a1MUA1q1zLFJnV"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path2, quiet=False)
 
