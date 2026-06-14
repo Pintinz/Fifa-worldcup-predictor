@@ -9,6 +9,7 @@ The model estimates probabilities for:
 * Home Win
 * Draw
 * Away Win
+* Over/Under
 
 ---
 
