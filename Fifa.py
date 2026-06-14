@@ -53,14 +53,18 @@ away = st.selectbox("Select Away Team:", teams1)
 
 prediction = st.button('Predict')
 
+home_set = fifa[fifa['home_team'] == home].iloc[0]
+away_set = fifa[fifa['away_team'] == away].iloc[0]
+    
+match = {
+    'home_avg_goal': home_set['home_avg_goal'], 'away_avg_goal': away_set['away_avg_goal'], 'home_avg_form':home_set['home_avg_form'], 'away_avg_form':away_set['away_avg_form'], 'home_5_conceded': home_set['home_5_conceded'], 'away_5_conceded': away_set['away_5_conceded']
+        }
+df = pd.DataFrame([match])
+st.write("Away Set Columns:", away_set.index.tolist())
+st.write("Home Set Columns:", home_set.index.tolist())
 if prediction:
     st.subheader("Predicted Outcome:")
-    home_set = fifa[fifa['home_team'] == home].iloc[0]
-    away_set = fifa[fifa['away_team'] == away].iloc[0]
-    match = {
-        'home_avg_goal': home_set['home_avg_goal'], 'away_avg_goal': away_set['away_avg_goal'], 'home_avg_form':home_set['home_avg_form'], 'away_avg_form':away_set['away_avg_form'], 'home_5_conceded': home_set['home_5_conceded'], 'away_5_conceded': away_set['away_5_conceded']
-        }
-    df = pd.DataFrame([match])
+    
     # df = scaler.transform(df)
     confidence = model.predict_proba(df)[0]
     overs = over1_5.predict_proba(df)[0]
