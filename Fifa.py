@@ -22,7 +22,7 @@ if not os.path.exists(MODEL_FILE):
 path = "fifa_dataset3.pkl"
 # https://drive.google.com/file/d/1AkOqoGHewIB2PQprCROd4W04UId_ZAql/view?usp=sharing
 if not os.path.exists(path):
-    file_id = "1AkOqoGHewIB2PQprCROd4W04UId_ZAql"
+    file_id = "1fx1PnXZM64DfaoHczeQiK4bnczvv18nU"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path, quiet=False)
 
