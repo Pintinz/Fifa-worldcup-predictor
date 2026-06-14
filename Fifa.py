@@ -29,7 +29,7 @@ if not os.path.exists(path):
 path2 = "over1.5_model.pkl"
 # https://drive.google.com/file/d/14m8VCtSj6YgOgvmBdUynnQm5IJyGoCP-/view?usp=sharing
 if not os.path.exists(path2):
-    file_id = "14m8VCtSj6YgOgvmBdUynnQm5IJyGoCP-"
+    file_id = "1chEsNKhEc_lMEg98hpJcKvEDOPdKiSDd"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path2, quiet=False)
 
