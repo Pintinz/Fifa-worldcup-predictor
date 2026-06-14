@@ -91,14 +91,14 @@ if prediction:
     with col1:
         with st.container(border=True):
             st.subheader(f"{home}")
-            st.write(f"In the Last 5 Matches, {home} scored {home_set['home_avg_goal']*5:.0f} goals average {home_set['home_avg_goal']}")
-            st.write(f"In the Last 5 Matches, {home} conceded an average {home_set['home_5_conceded']} goals average per match")
+            st.write(f"In the Last 5 Matches, {home} scored {home_set['home_avg_goal']*5:.0f} goals (average {home_set['home_avg_goal']}).")
+            st.write(f"In the Last 5 Matches, {home} conceded an average {home_set['home_5_conceded']} goals average per match.")
         
     with col2:
         with st.container(border=True):
             st.subheader(f"{away}")
-            st.write(f"In the Last 5 Matches, {away} scored {away_set['away_avg_goal']*5:.0f} goals average {away_set['away_avg_goal']}")
-            st.write(f"In the Last 5 Matches, {away} conceded an average {away_set['away_5_conceded']} goals average per match")
+            st.write(f"In the Last 5 Matches, {away} scored {away_set['away_avg_goal']*5:.0f} goals (average {away_set['away_avg_goal']}).")
+            st.write(f"In the Last 5 Matches, {away} conceded an average {away_set['away_5_conceded']} goals average per match.")
         
         
         #     # st.write("Confidence Level Table")
