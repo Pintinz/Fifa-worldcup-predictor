@@ -72,13 +72,19 @@ if prediction:
     col3, col4 = st.columns(2)
     with col3:
         with st.container(border=True):
-            st.subheader("1X2 Option")
-            if model.predict(df) == 2:
-                st.write(f"{home} wins")
-            elif model.predict(df) == 0:
-                st.write(f"{away} wins")
-            else:
-                st.write(f"{home} vs {away} Draws")
+            st.subheader("Double Chance Option")
+            # if model.predict(df) == 2:
+            #     st.write(f"{home} wins")
+            # elif model.predict(df) == 0:
+            #     st.write(f"{away} wins")
+            # else:
+            #     st.write(f"{home} vs {away} Draws")
+            if (confidence[2] > confidence[0] and confidence[0] <= confidence[1]):
+                st.write(f"{home} wins or Draw")
+            elif confidence[2] > confidence[0] and confidence[0] >= confidence[1]:
+                st.write(f"{home} wins or {away}")
+            elif confidence[2] < confidence[0] and confidence[2] <= confidence[1]:
+                st.write(f"{away} wins or Draw")
     
     with col4:
         with st.container(border=True):
