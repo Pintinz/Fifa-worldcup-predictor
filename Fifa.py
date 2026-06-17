@@ -11,25 +11,25 @@ import gdown
 # path1 =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_model3.pkl"
 # path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
 
-# https://drive.google.com/file/d/10yTV7Ca-xcRla57RkgL4yBLmLQiD2zE-/view?usp=sharing
+# https://drive.google.com/file/d/1GRQfhBfvexUnAjF16vV_uQd5TWPh5t6N/view?usp=sharing
 
 MODEL_FILE = "fifa_model3.pkl"
 if not os.path.exists(MODEL_FILE):
-    file_id = "1wIuUimUoo1nuy_cXfJoBZI5qgNuMYIZy"
+    file_id = "1GRQfhBfvexUnAjF16vV_uQd5TWPh5t6N"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, MODEL_FILE, quiet=False)
 
 path = "fifa_dataset3.pkl"
-# https://drive.google.com/file/d/1AkOqoGHewIB2PQprCROd4W04UId_ZAql/view?usp=sharing
+# https://drive.google.com/file/d/1WEG7iu3xmo9InUmQmwhilKiyqZdRsmVf/view?usp=sharing
 if not os.path.exists(path):
-    file_id = "1a3bQAmgBJXNWqS8zD3BMPYrv59LqzunS"
+    file_id = "1WEG7iu3xmo9InUmQmwhilKiyqZdRsmVf"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path, quiet=False)
 
 path2 = "over1.5_model.pkl"
-# https://drive.google.com/file/d/14m8VCtSj6YgOgvmBdUynnQm5IJyGoCP-/view?usp=sharing
+# https://drive.google.com/file/d/1RHj-oXq9YW_9xsKiG7QeAIJXthxys371/view?usp=sharing
 if not os.path.exists(path2):
-    file_id = "1YVjXnyqdncqlVQX7a5a1MUA1q1zLFJnV"
+    file_id = "1RHj-oXq9YW_9xsKiG7QeAIJXthxys371"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path2, quiet=False)
 
