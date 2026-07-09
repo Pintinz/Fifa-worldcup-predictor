@@ -11,18 +11,18 @@ import gdown
 # path1 =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_model3.pkl"
 # path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
 
-# https://drive.google.com/file/d/1GRQfhBfvexUnAjF16vV_uQd5TWPh5t6N/view?usp=sharing
+# https://drive.google.com/file/d/1VS3xZJUVwEd_Y9SCXvz-JP2XnGouX98u/view?usp=sharing
 
 MODEL_FILE = "fifa_model3.pkl"
 if not os.path.exists(MODEL_FILE):
-    file_id = "1GRQfhBfvexUnAjF16vV_uQd5TWPh5t6N"
+    file_id = "1VS3xZJUVwEd_Y9SCXvz-JP2XnGouX98u"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, MODEL_FILE, quiet=False)
 
 path = "fifa_dataset3.pkl"
-# https://drive.google.com/file/d/1WEG7iu3xmo9InUmQmwhilKiyqZdRsmVf/view?usp=sharing
+# https://drive.google.com/file/d/1t9M2zQFa4IXzunK2XRHM1dUjnoRokZDd/view?usp=sharing
 if not os.path.exists(path):
-    file_id = "1WEG7iu3xmo9InUmQmwhilKiyqZdRsmVf"
+    file_id = "1t9M2zQFa4IXzunK2XRHM1dUjnoRokZDd"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path, quiet=False)
 
