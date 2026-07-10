@@ -12,7 +12,7 @@ import gdown
 # path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
 
 # https://drive.google.com/file/d/1S8qcDReelgokkHFJQ0ivoTsvgrNwJ3Nr/view?usp=sharing
-
+st.set_page_config(page_title= "2026 FIFA WORLDCUP", layout='wide', initial_sidebar_state='expanded')
 MODEL_FILE = "fifa_model.pkl"
 if not os.path.exists(MODEL_FILE):
     file_id = "1S8qcDReelgokkHFJQ0ivoTsvgrNwJ3Nr"
@@ -66,7 +66,9 @@ df = pd.DataFrame([match])
 # st.write("Away Set Columns:", away_set.index.tolist())
 # st.write("Home Set Columns:", home_set.index.tolist())
 if prediction:
-    st.subheader("Predicted Outcome:")
+    st.markdown("""
+                <h4 style ="font-size:18px;">Predicted Outcome</h4>
+                """, unsafe_allow_html=True)
     
     # df = scaler.transform(df)
     confidence = model.predict_proba(df)[0]
@@ -99,13 +101,17 @@ if prediction:
     col1, col2 = st.columns(2)
     with col1:
         with st.container(border=True):
-            st.subheader(f"{home}")
+            st.markdown("""
+                        <h4 style = "font-size:18px;">f"{home}"<h/4>
+                        """, unsafe_allow_html=True)
             st.write(f"• In the Last 5 Matches, {home} scored {home_set['home_avg_goal']*5:.0f} goals (average {home_set['home_avg_goal']}).")
             st.write(f"• In the Last 5 Matches, {home} conceded an average {home_set['home_5_conceded']} goals per match.")
         
     with col2:
         with st.container(border=True):
-            st.subheader(f"{away}")
+            st.markdown("""
+                        <h4 style= "font-size:18px;">f"{away}"</h4>
+                        """, unsafe_allow_html=True)
             st.write(f"• In the Last 5 Matches, {away} scored {away_set['away_avg_goal']*5:.0f} goals (average {away_set['away_avg_goal']}).")
             st.write(f"• In the Last 5 Matches, {away} conceded an average {away_set['away_5_conceded']} goals per match.")
         
@@ -161,7 +167,6 @@ if prediction:
     )
     with st.container(border =True):
         st.markdown("""
-                    ###PREDICTION CHART
-                    
-                    """)
+                    <h4 style="font-size:18px;"PREDICTION LEVEL</h4>
+                    """, unsafe_allow_html=True)
         st.plotly_chart(fig, use_container_width=True)
