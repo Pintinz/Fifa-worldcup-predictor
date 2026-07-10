@@ -79,7 +79,7 @@ if prediction:
         with st.container(border=True):
             # st.subheader("Double Chance Option")
             st.markdown("""
-                        <h4 style="font-size:22px;">Double Chance Option</h4>
+                        <h4 style="font-size:24px;">Double Chance Option</h4>
                         """, unsafe_allow_html=True)
             # if model.predict(df) == 2:
             #     st.write(f"{home} wins")
@@ -97,7 +97,7 @@ if prediction:
     with col4:
         with st.container(border=True):
             st.markdown("""
-                        <h4 style="font-size:22px;">Over/Under Option</h4>
+                        <h4 style="font-size:24px;">Over/Under Option</h4>
                         """, unsafe_allow_html=True)
             if over1_5.predict(df) == 1:
                 st.write(f"over 1.5 full time")
@@ -176,6 +176,6 @@ if prediction:
     )
     with st.container(border =True):
         st.markdown("""
-                    <h4 style="font-size:18px;"PREDICTION LEVEL</h4>
+                    <h4 style="font-size:24px;">PREDICTION LEVEL</h4>
                     """, unsafe_allow_html=True)
         st.plotly_chart(fig, use_container_width=True)
