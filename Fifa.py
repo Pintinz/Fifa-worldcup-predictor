@@ -14,34 +14,33 @@ import gdown
 # https://drive.google.com/file/d/1S8qcDReelgokkHFJQ0ivoTsvgrNwJ3Nr/view?usp=sharing
 st.set_page_config(page_title= "2026 FIFA WORLDCUP")
 MODEL_FILE = "fifa_model.pkl"
-@st.cache_load
+@st.cache_resource
 def model_file():
     if not os.path.exists(MODEL_FILE):
         file_id = "1S8qcDReelgokkHFJQ0ivoTsvgrNwJ3Nr"
         url = f"https://drive.google.com/uc?id={file_id}"
         gdown.download(url, MODEL_FILE, quiet=False)
-        return MODEL_FILE
+        return joblib.load(MODEL_FILE)
 
 path = "fifa_dataset.pkl"
 # https://drive.google.com/file/d/1__QzazmjLtJbxE_ROg2XMSQ6czWiqzHG/view?usp=sharing
-@st.cache_load
+@st.cache_resource
 def fifa_path():
     if not os.path.exists(path):
         file_id = "1__QzazmjLtJbxE_ROg2XMSQ6czWiqzHG"
         url = f"https://drive.google.com/uc?id={file_id}"
         gdown.download(url, path, quiet=False)
-        return path
+        return joblib.load(path)
 
 path2 = "over1.5_model.pkl"
 # https://drive.google.com/file/d/1v5gBTW1puYfYSFqCBqgO8erm6T70_6hg/view?usp=sharing
-@st.cache_load
+@st.cache_resource
 def fifa_path2():
     if not os.path.exists(path2):
         file_id = "1v5gBTW1puYfYSFqCBqgO8erm6T70_6hg"
         url = f"https://drive.google.com/uc?id={file_id}"
         gdown.download(url, path2, quiet=False)
-        return path2
-
+        return joblib.load(path2)
 
 
 # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -49,9 +48,9 @@ def fifa_path2():
 # path = os.path.join(BASE_DIR, "fifa_dataset3.pkl")
 # path2 = os.path.join(BASE_DIR, "over1.5_model.pkl")
 
-model = joblib.load(MODEL_FILE)
-fifa = joblib.load(path)
-over1_5 = joblib.load(path2)
+model = model_file()
+fifa = fifa_path()
+over1_5 = fifa_path2()
 
 teams = fifa['home_team'].unique()
 teams1 = fifa['away_team'].unique()
