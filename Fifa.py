@@ -79,7 +79,7 @@ if prediction:
         with st.container(border=True):
             # st.subheader("Double Chance Option")
             st.markdown("""
-                        <h4 style="font-size:18px;">Double Chance Option</h4>
+                        <h4 style="font-size:22px;">Double Chance Option</h4>
                         """, unsafe_allow_html=True)
             # if model.predict(df) == 2:
             #     st.write(f"{home} wins")
@@ -97,7 +97,7 @@ if prediction:
     with col4:
         with st.container(border=True):
             st.markdown("""
-                        <h4 style="font-size:18px;">Over/Under Option</h4>
+                        <h4 style="font-size:22px;">Over/Under Option</h4>
                         """, unsafe_allow_html=True)
             if over1_5.predict(df) == 1:
                 st.write(f"over 1.5 full time")
@@ -108,16 +108,16 @@ if prediction:
         with st.container(border=True):
             # h = f"{home}"
             st.markdown("""
-                        <h4 style = "font-size:18px;">home<h/4>
+                        <h4 style = "font-size:22px;">home<h/4>
                         """, unsafe_allow_html=True)
             st.write(f"• In the Last 5 Matches, {home} scored {home_set['home_avg_goal']*5:.0f} goals (average {home_set['home_avg_goal']}).")
             st.write(f"• In the Last 5 Matches, {home} conceded an average {home_set['home_5_conceded']} goals per match.")
         
     with col2:
         with st.container(border=True):
-            # h = f"{away}"
+            a = f"{away}"
             st.markdown("""
-                        <h4 style= "font-size:18px;">away</h4>
+                        <h4 style= "font-size:22px;">a</h4>
                         """, unsafe_allow_html=True)
             st.write(f"• In the Last 5 Matches, {away} scored {away_set['away_avg_goal']*5:.0f} goals (average {away_set['away_avg_goal']}).")
             st.write(f"• In the Last 5 Matches, {away} conceded an average {away_set['away_5_conceded']} goals per match.")
