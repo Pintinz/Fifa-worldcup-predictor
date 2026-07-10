@@ -149,13 +149,16 @@ if prediction:
     )
 
     fig.update_layout(
-        title="Prediction Probabilities",
-        xaxis_title="Probability (%)",
+        title="",
+        xaxis_title="Confidence Level (%)",
         xaxis=dict(range=[0, 100]),
         yaxis_title="",
         height=300,
         margin=dict(l=20, r=20, t=50, b=20),
         showlegend=False
     )
-
-    st.plotly_chart(fig, use_container_width=True)
+    with st.container(border =True):
+        st.markdown("""
+                        ###PREDICTION CHART
+                        """)
+        st.plotly_chart(fig, use_container_width=True)
