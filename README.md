@@ -1,4 +1,4 @@
-# FIFA World Cup Predictor ⚽
+#⚽ FIFA World Cup Predictor 
 
 ## Overview
 
