@@ -12,7 +12,7 @@ import gdown
 # path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
 
 # https://drive.google.com/file/d/1S8qcDReelgokkHFJQ0ivoTsvgrNwJ3Nr/view?usp=sharing
-st.set_page_config(page_title= "2026 FIFA WORLDCUP", layout='wide', initial_sidebar_state='expanded')
+st.set_page_config(page_title= "2026 FIFA WORLDCUP")
 MODEL_FILE = "fifa_model.pkl"
 if not os.path.exists(MODEL_FILE):
     file_id = "1S8qcDReelgokkHFJQ0ivoTsvgrNwJ3Nr"
