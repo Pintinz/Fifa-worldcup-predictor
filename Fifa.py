@@ -159,6 +159,7 @@ if prediction:
     )
     with st.container(border =True):
         st.markdown("""
-                        ###PREDICTION CHART
-                        """)
+                    ###PREDICTION CHART
+                    
+                    """)
         st.plotly_chart(fig, use_container_width=True)
