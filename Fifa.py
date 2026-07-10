@@ -11,25 +11,25 @@ import gdown
 # path1 =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_model3.pkl"
 # path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
 
-# https://drive.google.com/file/d/1VS3xZJUVwEd_Y9SCXvz-JP2XnGouX98u/view?usp=sharing
+# https://drive.google.com/file/d/1S8qcDReelgokkHFJQ0ivoTsvgrNwJ3Nr/view?usp=sharing
 
-MODEL_FILE = "fifa_model3.pkl"
+MODEL_FILE = "fifa_model.pkl"
 if not os.path.exists(MODEL_FILE):
-    file_id = "1VS3xZJUVwEd_Y9SCXvz-JP2XnGouX98u"
+    file_id = "1S8qcDReelgokkHFJQ0ivoTsvgrNwJ3Nr"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, MODEL_FILE, quiet=False)
 
-path = "fifa_dataset3.pkl"
-# https://drive.google.com/file/d/1t9M2zQFa4IXzunK2XRHM1dUjnoRokZDd/view?usp=sharing
+path = "fifa_dataset.pkl"
+# https://drive.google.com/file/d/1__QzazmjLtJbxE_ROg2XMSQ6czWiqzHG/view?usp=sharing
 if not os.path.exists(path):
-    file_id = "1t9M2zQFa4IXzunK2XRHM1dUjnoRokZDd"
+    file_id = "1__QzazmjLtJbxE_ROg2XMSQ6czWiqzHG"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path, quiet=False)
 
 path2 = "over1.5_model.pkl"
-# https://drive.google.com/file/d/1RHj-oXq9YW_9xsKiG7QeAIJXthxys371/view?usp=sharing
+# https://drive.google.com/file/d/1v5gBTW1puYfYSFqCBqgO8erm6T70_6hg/view?usp=sharing
 if not os.path.exists(path2):
-    file_id = "1RHj-oXq9YW_9xsKiG7QeAIJXthxys371"
+    file_id = "1v5gBTW1puYfYSFqCBqgO8erm6T70_6hg"
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, path2, quiet=False)
 
@@ -46,7 +46,7 @@ over1_5 = joblib.load(path2)
 
 teams = fifa['home_team'].unique()
 teams1 = fifa['away_team'].unique()
-st.header("FIFA WORLD CUP PREDICTION DASHBOARD")
+st.header("⚽FIFA WORLD CUP PREDICTION DASHBOARD", width = "stretch")
 home = st.selectbox("Select Home Team:", teams)
 away = st.selectbox("Select Away Team:", teams1)
 
@@ -118,5 +118,43 @@ if prediction:
         "Draw Level": f"{confidence[1]*100:.0f}%"
         }
     level = pd.DataFrame([outcome])
-    st.subheader("Confidence Level")
-    st.write(level)
+    # st.subheader("Confidence Level")
+    # st.write(level)
+    import plotly.graph_objects as go
+    import streamlit as st
+
+    # Prediction probabilities
+    # home_prob = 64
+    # draw_prob = 22
+    # away_prob = 14
+    
+    colors = ["#9b1fb4", "#b4b41f", "#1f30b4"]
+    labels = [home, "Draw", away]
+    values = [confidence[2]*100, confidence[1]*100, confidence[1]*100]
+    m = [f"{confidence[2]*100:.1f}", f"{confidence[1]*100:.1f}", f"{confidence[0]*100:.1f}"]
+    # max_index = confidence.index(max(confidence))
+    # max_index = np.argmax(confidence)
+    # colors[max_index] = "#2ecc71"
+    fig = go.Figure(
+        go.Bar(
+            x=values,
+            y=labels,
+            orientation="h",
+            # text=[f"{v:.1f}%" for v in values],
+            text = m,
+            textposition="outside",
+            marker_color=colors
+        )
+    )
+
+    fig.update_layout(
+        title="Prediction Probabilities",
+        xaxis_title="Probability (%)",
+        xaxis=dict(range=[0, 100]),
+        yaxis_title="",
+        height=300,
+        margin=dict(l=20, r=20, t=50, b=20),
+        showlegend=False
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
