@@ -67,7 +67,7 @@ df = pd.DataFrame([match])
 # st.write("Home Set Columns:", home_set.index.tolist())
 if prediction:
     st.markdown("""
-                <h4 style ="font-size:18px;">Predicted Outcome</h4>
+                <h4 style ="font-size:24px;">Predicted Outcome</h4>
                 """, unsafe_allow_html=True)
     
     # df = scaler.transform(df)
