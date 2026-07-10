@@ -52,9 +52,9 @@ st.markdown("""
 home = st.selectbox("Select Home Team:", teams)
 away = st.selectbox("Select Away Team:", teams1)
 
-
-with st.container(border = True):
-    prediction = st.button('Predict Match')
+t, y, u = st.columns([2, 7, 2])
+with y(border = True):
+    prediction = st.button('Predict Match', use_container_width = True)
 
 home_set = fifa[fifa['home_team'] == home].iloc[0]
 away_set = fifa[fifa['away_team'] == away].iloc[0]
