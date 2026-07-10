@@ -47,8 +47,8 @@ over1_5 = joblib.load(path2)
 teams = fifa['home_team'].unique()
 teams1 = fifa['away_team'].unique()
 st.markdown("""
-            <h3 style = "font-size:24px;">"⚽FIFA WORLD CUP PREDICTION DASHBOARD"</h3>, unsafe_allow_html=True
-            """)
+            <h3 style = "font-size:24px;">⚽FIFA WORLD CUP PREDICTION DASHBOARD</h3>
+            """, unsafe_allow_html=True)
 home = st.selectbox("Select Home Team:", teams)
 away = st.selectbox("Select Away Team:", teams1)
 
