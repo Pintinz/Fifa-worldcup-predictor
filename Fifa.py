@@ -157,17 +157,17 @@ if prediction:
     colors = ["#9b1fb4", "#b4b41f", "#1f30b4"]
     labels = [home, "Draw", away]
     values = [confidence[2]*100, confidence[1]*100, confidence[1]*100]
-    m = [f"{confidence[2]*100:.1f}", f"{confidence[1]*100:.1f}", f"{confidence[0]*100:.1f}"]
+    # m = [f"{confidence[2]*100:.1f}", f"{confidence[1]*100:.1f}", f"{confidence[0]*100:.1f}"]
     # max_index = confidence.index(max(confidence))
-    # max_index = np.argmax(confidence)
-    # colors[max_index] = "#2ecc71"
+    max_index = np.argmax(confidence)
+    colors[max_index] = "#2ecc71"
     fig = go.Figure(
         go.Bar(
             x=values,
             y=labels,
             orientation="h",
-            # text=[f"{v:.1f}%" for v in values],
-            text = m,
+            text=[f"{v:.1f}%" for v in values],
+            # text = m,
             textposition="outside",
             marker_color=colors
         )
