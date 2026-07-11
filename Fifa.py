@@ -97,9 +97,9 @@ if prediction:
             #     st.write(f"{home} vs {away} Draws")
             if (confidence[2] > confidence[0] and confidence[0] <= confidence[1]):
                 st.write(f"{home} wins or Draw")
-            elif confidence[2] > confidence[0] and confidence[0] >= confidence[1]:
+            elif (confidence[2] > confidence[0] and confidence[0] >= confidence[1]):
                 st.write(f"{home} wins or {away}")
-            elif confidence[2] < confidence[0] and confidence[2] <= confidence[1]:
+            elif (confidence[2] < confidence[0] and confidence[2] <= confidence[1]):
                 st.write(f"{away} wins or Draw")
     
     with col4:
