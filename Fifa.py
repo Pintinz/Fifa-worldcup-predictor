@@ -179,7 +179,7 @@ if prediction:
         xaxis=dict(range=[0, 100]),
         yaxis_title="",
         height=300,
-        margin=dict(l=20, r=20, t=50, b=20),
+        margin=dict(l=2, r=20, t=50, b=2),
         showlegend=False
     )
     with st.container(border =True):
