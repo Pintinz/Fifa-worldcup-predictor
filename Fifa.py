@@ -156,7 +156,7 @@ if prediction:
     
     colors = ["#9b1fb4", "#b4b41f", "#1f30b4"]
     labels = [home, "Draw", away]
-    values = [confidence[2]*100, confidence[1]*100, confidence[1]*100]
+    values = [confidence[2]*100, confidence[1]*100, confidence[0]*100]
     # m = [f"{confidence[2]*100:.1f}", f"{confidence[1]*100:.1f}", f"{confidence[0]*100:.1f}"]
     # max_index = confidence.index(max(confidence))
     max_index = np.argmax(confidence)
