@@ -45,7 +45,16 @@ def fifa_path2():
         return joblib.load(path2)
     return joblib.load(path2)
 
-
+flag_path = "Countries_flags.pkl"
+# https://drive.google.com/file/d/1lQa7HgUsicWKU3Yoim_Bl-zrLmRzV02_/view?usp=sharing
+@st.cache_resource
+def countries_flag():
+    if not os.path.exists(flag_path):
+        file_id = "1lQa7HgUsicWKU3Yoim_Bl-zrLmRzV02_"
+        url = f"https://drive.google.com/uc?id={file_id}"
+        gdown.download(url, flag_path, quiet=False)
+        return joblib.load(flag_path)
+    return joblib.load(flag_path)
 # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # path1 = os.path.join(MODEL_FILE, "fifa_model3.pkl")
 # path = os.path.join(BASE_DIR, "fifa_dataset3.pkl")
@@ -54,6 +63,7 @@ def fifa_path2():
 model = model_file()
 fifa = fifa_path()
 over1_5 = fifa_path2()
+flag = countries_flag()
 
 teams = fifa['home_team'].unique()
 teams1 = fifa['away_team'].unique()
