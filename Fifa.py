@@ -11,36 +11,39 @@ import gdown
 # path1 =r"C:\Users\hp\OneDrive\Desktop\Project\fifa_model3.pkl"
 # path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
 
-# https://drive.google.com/file/d/17BFGvyIj3OA9DNl_APyuiZDiBBZvPdUb/view?usp=sharing
-st.set_page_config(page_title= "2026 FIFA WORLDCUP")
+# https://drive.google.com/file/d/1HmIqmlOPHmxN03gv26bIgH5EoDFPIk1U/view?usp=sharing
+st.set_page_config(page_title= "2026 FIFA WORLDCUP", page_icon="⚽")
 MODEL_FILE = "fifa_model.pkl"
 @st.cache_resource
 def model_file():
     if not os.path.exists(MODEL_FILE):
-        file_id = "17BFGvyIj3OA9DNl_APyuiZDiBBZvPdUb"
+        file_id = "1HmIqmlOPHmxN03gv26bIgH5EoDFPIk1U"
         url = f"https://drive.google.com/uc?id={file_id}"
         gdown.download(url, MODEL_FILE, quiet=False)
         return joblib.load(MODEL_FILE)
+    return joblib.load(MODEL_FILE)
 
 path = "fifa_dataset.pkl"
-# https://drive.google.com/file/d/1XqSR39nZnBqbMEMh7unKNmovIfyovszR/view?usp=sharing
+# https://drive.google.com/file/d/1mjEpI43UdYogZ3qdIpp-MdFa6sj4FULe/view?usp=sharing
 @st.cache_resource
 def fifa_path():
     if not os.path.exists(path):
-        file_id = "1XqSR39nZnBqbMEMh7unKNmovIfyovszR"
+        file_id = "1mjEpI43UdYogZ3qdIpp-MdFa6sj4FULe"
         url = f"https://drive.google.com/uc?id={file_id}"
         gdown.download(url, path, quiet=False)
         return joblib.load(path)
+    return joblib.load(path)
 
 path2 = "over1.5_model.pkl"
-# https://drive.google.com/file/d/1pqWtoNTLWH3mXuy7XdzB-f6LuxtKkZRC/view?usp=sharing
+# https://drive.google.com/file/d/1cdes0bZD_jQ8X_osQ5tPeY32ZyW340tv/view?usp=sharing
 @st.cache_resource
 def fifa_path2():
     if not os.path.exists(path2):
-        file_id = "1pqWtoNTLWH3mXuy7XdzB-f6LuxtKkZRC"
+        file_id = "1cdes0bZD_jQ8X_osQ5tPeY32ZyW340tv"
         url = f"https://drive.google.com/uc?id={file_id}"
         gdown.download(url, path2, quiet=False)
         return joblib.load(path2)
+    return joblib.load(path2)
 
 
 # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
