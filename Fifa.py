@@ -12,7 +12,7 @@ import gdown
 # path2 =r"C:\Users\hp\OneDrive\Desktop\Project\scaler.pkl"
 
 # https://drive.google.com/file/d/17BFGvyIj3OA9DNl_APyuiZDiBBZvPdUb/view?usp=sharing
-st.set_page_config(page_title= "2026 FIFA WORLDCUP", page_icon = "⚽")
+st.set_page_config(page_title= "2026 FIFA WORLDCUP")
 MODEL_FILE = "fifa_model.pkl"
 @st.cache_resource
 def model_file():
